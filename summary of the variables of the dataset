@@ -1,0 +1,43 @@
+| Column      | Description                                                          |
+| ----------- | -------------------------------------------------------------------- |
+| **EventId** | Unique identifier for each event (not a feature).                    |
+| **Weight**  | Event weight, used for AMS metric calculation.                       |
+| **Label**   | Target variable: `"s"` (signal – Higgs boson) or `"b"` (background). |
+
+## Derived Feature (DER_)
+| Feature                             | Description                                                                                            |    |                                                                       |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------ | -- | --------------------------------------------------------------------- |
+| **DER\_mass\_MMC**                  | Estimated mass of the Higgs boson candidate (via Missing Mass Calculator). May be `-999` if undefined. |    |                                                                       |
+| **DER\_mass\_transverse\_met\_lep** | Transverse mass of system formed by lepton and missing energy.                                         |    |                                                                       |
+| **DER\_mass\_vis**                  | Invariant mass of the hadronic tau and lepton (ignores missing energy from neutrinos).                 |    |                                                                       |
+| **DER\_pt\_h**                      | Transverse momentum of the Higgs boson candidate (sum of tau, lepton, and MET momenta).                |    |                                                                       |
+| **DER\_deltaeta\_jet\_jet**         |                                                                                                        | Δη | difference between two leading jets (undefined if fewer than 2 jets). |
+| **DER\_mass\_jet\_jet**             | Invariant mass of two leading jets (undefined if fewer than 2 jets).                                   |    |                                                                       |
+| **DER\_prodeta\_jet\_jet**          | Product of pseudorapidities of two leading jets (undefined if fewer than 2 jets).                      |    |                                                                       |
+| **DER\_deltar\_tau\_lep**           | Angular distance ΔR between hadronic tau and lepton.                                                   |    |                                                                       |
+| **DER\_pt\_tot**                    | Magnitude of vector sum of transverse momenta of all particles and MET.                                |    |                                                                       |
+| **DER\_sum\_pt**                    | Scalar sum of transverse momenta of tau, lepton, all jets, and MET.                                    |    |                                                                       |
+| **DER\_pt\_ratio\_lep\_tau**        | Ratio of lepton pT to tau pT.                                                                          |    |                                                                       |
+| **DER\_met\_phi\_centrality**       | Centrality of missing energy φ angle relative to tau and lepton.                                       |    |                                                                       |
+| **DER\_lep\_eta\_centrality**       | Centrality of lepton pseudorapidity relative to the two leading jets (undefined if fewer than 2 jets). |    |                                                                       |
+
+## Primative Features (PRI)
+| Feature                       | Description                                                                     |
+| ----------------------------- | ------------------------------------------------------------------------------- |
+| **PRI\_tau\_pt**              | Transverse momentum (pT) of hadronic tau.                                       |
+| **PRI\_tau\_eta**             | Pseudorapidity of hadronic tau.                                                 |
+| **PRI\_tau\_phi**             | Azimuthal angle (φ) of hadronic tau.                                            |
+| **PRI\_lep\_pt**              | Transverse momentum of lepton (electron or muon).                               |
+| **PRI\_lep\_eta**             | Pseudorapidity of lepton.                                                       |
+| **PRI\_lep\_phi**             | Azimuthal angle of lepton.                                                      |
+| **PRI\_met**                  | Magnitude of missing transverse energy (MET).                                   |
+| **PRI\_met\_phi**             | Azimuthal angle of MET.                                                         |
+| **PRI\_met\_sumet**           | Scalar sum of transverse energy in the event.                                   |
+| **PRI\_jet\_num**             | Number of jets (0 to 3; values above 3 are capped at 3).                        |
+| **PRI\_jet\_leading\_pt**     | Transverse momentum of the leading jet (undefined if no jets).                  |
+| **PRI\_jet\_leading\_eta**    | Pseudorapidity of the leading jet.                                              |
+| **PRI\_jet\_leading\_phi**    | Azimuthal angle of the leading jet.                                             |
+| **PRI\_jet\_subleading\_pt**  | Transverse momentum of the second-leading jet (undefined if fewer than 2 jets). |
+| **PRI\_jet\_subleading\_eta** | Pseudorapidity of the second-leading jet.                                       |
+| **PRI\_jet\_subleading\_phi** | Azimuthal angle of the second-leading jet.                                      |
+| **PRI\_jet\_all\_pt**         | Scalar sum of pT of all jets in the event.                                      |
